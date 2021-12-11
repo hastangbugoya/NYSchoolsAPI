@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SchoolName">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="fontFamily">@font/robotoslab_variablefont_wght</item>
+        <item name="maxLines">2</item>
+    </style>
+    <style name="SchoolAddress">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="fontFamily">@font/opensanscondensed_light</item>
+        <item name="maxLines">3</item>
+    </style>
+</resources>
