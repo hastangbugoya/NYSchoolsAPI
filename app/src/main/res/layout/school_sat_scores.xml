@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/text_school_name"
-        style="@style/SchoolName"
+        style="@style/SchoolListName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:background="@color/teal_200"
         android:gravity="center_horizontal"
-        android:text="School Name"
+        tools:text="School Name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="9999"
+        tools:text="9999"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@id/text_takers_label" />
@@ -71,7 +72,7 @@
         style="@style/NumericInfoBig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="999"
+        tools:text="999"
         app:layout_constraintLeft_toRightOf="@id/guideline"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_critical_reading_label" />
@@ -91,7 +92,7 @@
         style="@style/NumericInfoBig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="999"
+        tools:text="999"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@id/text_math_avg_label" />
@@ -110,7 +111,7 @@
         style="@style/NumericInfoBig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="999"
+        tools:text="999"
         app:layout_constraintLeft_toRightOf="@id/guideline"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_writing_avg_label" />

@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="SchoolName">
+    <style name="SchoolListName">
         <item name="android:padding">8dp</item>
         <item name="android:layout_margin">0dp</item>
         <item name="fontFamily">@font/robotoslab_variablefont_wght</item>
         <item name="maxLines">2</item>
     </style>
-    <style name="SchoolAddress">
+    <style name="SchoolListAddress">
         <item name="android:padding">8dp</item>
         <item name="android:layout_margin">0dp</item>
         <item name="fontFamily">@font/opensanscondensed_light</item>
         <item name="maxLines">3</item>
     </style>
-    <style name="SchoolDetails">
+    <style name="SchoolListDetails">
         <item name="android:padding">8dp</item>
         <item name="android:layout_margin">0dp</item>
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="maxLines">1</item>
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">10sp</item>
     </style>
     <style name="NumericInfoBig">
         <item name="android:textSize">32sp</item>
         <item name="fontFamily">@font/robotoslab_variablefont_wght</item>
         <item name="android:padding">8dp</item>
+        <item name="maxLines">1</item>
+    </style>
+    <style name="SchoolDetailInfo">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/robotoslab_variablefont_wght</item>
+        <item name="android:padding">10dp</item>
+        <item name="maxLines">1</item>
+    </style>
+    <style name="SchoolDetailInfoOverview">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/robotoslab_variablefont_wght</item>
+        <item name="android:padding">10dp</item>
         <item name="maxLines">1</item>
     </style>
 </resources>

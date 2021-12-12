@@ -124,7 +124,7 @@ data class SchoolsItem(
 //    val ell_programs: String?,
 //    val end_time: String?,
 //    val extracurricular_activities: String?,
-//    val fax_number: String?,
+    val fax_number: String?,
 //    val finalgrades: String?,
 //    val geoeligibility: String?,
 //    val girls: String?,
@@ -230,7 +230,7 @@ data class SchoolsItem(
 //    val pbat: String?,
 //    val pct_stu_enough_variety: String?,
 //    val pct_stu_safe: String?,
-//    val phone_number: String?,
+    val phone_number: String?,
 //    val prgdesc1: String?,
 //    val prgdesc10: String?,
 //    val prgdesc2: String?,
@@ -349,5 +349,5 @@ data class SchoolsItem(
     val website: String?,
     val zip: String?
 ) {
-    constructor():this("","","","","","","","")
+    constructor():this("","","","","","","","","","")
 }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_school_name"
+        style="@style/SchoolListName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:gravity="center_horizontal"
+        tools:text="School Name"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_overview"
+        style="@style/SchoolDetailInfoOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:maxLines="4"
+        tools:text="@string/lorem_ipsum"
+        app:layout_constraintTop_toBottomOf="@id/text_school_name" />
+
+    <TextView
+        android:id="@+id/text_school_location"
+        style="@style/SchoolDetailInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Address"
+        app:layout_constraintTop_toBottomOf="@id/text_overview" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_directions_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_directions_24"
+        app:layout_constraintBottom_toBottomOf="@id/text_school_location"
+        app:layout_constraintRight_toRightOf="@id/text_school_location"
+        app:layout_constraintTop_toTopOf="@id/text_school_location" />
+
+    <TextView
+        android:id="@+id/text_zip"
+        style="@style/SchoolDetailInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="99999"
+        app:layout_constraintTop_toBottomOf="@id/text_school_location" />
+
+    <TextView
+        android:id="@+id/text_school_email"
+        style="@style/SchoolDetailInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="add@address.com"
+        app:layout_constraintTop_toBottomOf="@id/text_zip" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_email_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_email_24"
+        app:layout_constraintBottom_toBottomOf="@id/text_school_email"
+        app:layout_constraintRight_toRightOf="@id/text_school_email"
+        app:layout_constraintTop_toTopOf="@id/text_school_email" />
+
+    <TextView
+        android:id="@+id/text_phone"
+        style="@style/SchoolDetailInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="(999)999-9999"
+        app:layout_constraintTop_toBottomOf="@id/text_school_email" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_phone_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_phone_24"
+        app:layout_constraintBottom_toBottomOf="@id/text_phone"
+        app:layout_constraintRight_toRightOf="@id/text_phone"
+        app:layout_constraintTop_toTopOf="@id/text_phone" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_ok_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:src="@drawable/ic_baseline_check_circle_32"
+        app:layout_constraintTop_toBottomOf="@id/text_phone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+ />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
