@@ -23,12 +23,12 @@ class SATRetrofit {
         call.enqueue(object : Callback<SatScores> {
             override fun onResponse(call: Call<SatScores>, response: Response<SatScores>) {
                 if (response.code() == 200) {
-                    LogKitty("Hello SATs response : " + response.body()?.size)
+                    LogKitty("SATs API response : " + response.body()?.size)
                     response.body()?.forEach {
                         LogKitty(it.toString())
                         myMap.put(it.dbn.toString(),it)
                     }
-                    LogKitty("SAT done! " + myMap.size)
+                    LogKitty("SAT HashMap size : " + myMap.size)
                 }
             }
             override fun onFailure(call: Call<SatScores>, t: Throwable) {

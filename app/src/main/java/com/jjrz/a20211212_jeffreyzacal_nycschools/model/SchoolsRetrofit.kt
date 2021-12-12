@@ -14,7 +14,6 @@ import retrofit2.http.GET
 
 class SchoolsRetrofit {
     fun getSchools() : List<SchoolsItem> {
-        LogKitty("Hello there 1")
         var myList = mutableListOf<SchoolsItem>()
         val retrofit = Retrofit.Builder()
             .baseUrl("https://data.cityofnewyork.us/resource/")
@@ -22,18 +21,15 @@ class SchoolsRetrofit {
             .build()
         val service = retrofit.create(SchoolsService::class.java)
         val call = service.getAllSchools()
-        LogKitty("Hello there 2")
         call.enqueue(object : Callback<Schools> {
             override fun onResponse(call: Call<Schools>, response: Response<Schools>) {
-                LogKitty("Hello there 3")
                 if (response.code() == 200) {
-                    LogKitty("Hello Schools results : " + response.body()?.size)
-
+                    LogKitty("Hello Schools API results : " + response.body()?.size)
                     response.body()?.forEach {
                         myList.add(it)
                         LogKitty("School : " + it.toString())
                     }
-                            LogKitty ("Schools added to list : " + myList.size)
+                    LogKitty("Schools added to list : " + myList.size)
                 }
             }
 
@@ -41,7 +37,6 @@ class SchoolsRetrofit {
                 LogKitty("Fail : $t")
             }
         })
-        LogKitty("Schools List count " + myList.size)
         return myList
     }
 

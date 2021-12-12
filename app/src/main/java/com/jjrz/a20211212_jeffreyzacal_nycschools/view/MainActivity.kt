@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         LogKitty("Main1")
         val myNYCSchoolsViewModel = ViewModelProvider(this).get(NycSchoolsVieModel::class.java)
 
-
-
         var binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         var adapter = SchoolsRecyclerViewAdapter()
         val snapHelper = PagerSnapHelper()
@@ -30,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         adapter.setSchools(myNYCSchoolsViewModel.getSchools())
         LogKitty("Main4")
         binding.schoolsRecyclerview.adapter = adapter
-        LogKitty("Main5")
-        LogKitty("Main6 > " + myNYCSchoolsViewModel.getSchoolsCount())
+        LogKitty("Main5 > " + myNYCSchoolsViewModel.getSchoolsCount())
         myNYCSchoolsViewModel.mySchools.observe(this, Observer {
-            LogKitty("Main7 > " + myNYCSchoolsViewModel.getSchoolsCount())
+            LogKitty("Main6 > " + myNYCSchoolsViewModel.getSchoolsCount())
+            adapter.setSchools(it)
         })
     }
 }
