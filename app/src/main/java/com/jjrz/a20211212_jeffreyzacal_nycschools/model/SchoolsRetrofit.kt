@@ -28,10 +28,12 @@ class SchoolsRetrofit {
                 LogKitty("Hello there 3")
                 if (response.code() == 200) {
                     LogKitty("Hello Schools results : " + response.body()?.size)
+
                     response.body()?.forEach {
                         myList.add(it)
+                        LogKitty("School : " + it.toString())
                     }
-                    LogKitty("Schools added to list : " + myList.size)
+                            LogKitty ("Schools added to list : " + myList.size)
                 }
             }
 

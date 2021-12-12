@@ -25,7 +25,7 @@ class SATRetrofit {
                 if (response.code() == 200) {
                     LogKitty("Hello SATs response : " + response.body()?.size)
                     response.body()?.forEach {
-//                        LogKitty(it.toString())
+                        LogKitty(it.toString())
                         myMap.put(it.dbn.toString(),it)
                     }
                     LogKitty("SAT done! " + myMap.size)
