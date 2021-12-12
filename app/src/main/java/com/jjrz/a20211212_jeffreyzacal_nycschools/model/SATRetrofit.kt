@@ -1,27 +1,45 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
+
+import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
 import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 
 class SATRetrofit {
+    var myMap = HashMap<String, SatScoresItem>()
+    fun getScores() : HashMap<String, SatScoresItem> {
 
-    private val sATService = createRetrofit().create(SATService::class.java)
-    val baseURL = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://data.cityofnewyork.us/resource/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val service = retrofit.create(SATService::class.java)
+        val call = service.getAllSATScores()
+        call.enqueue(object : Callback<SatScores> {
+            override fun onResponse(call: Call<SatScores>, response: Response<SatScores>) {
+                if (response.code() == 200) {
+                    LogKitty("Hello SATs response : " + response.body()?.size)
+                    response.body()?.forEach {
+//                        LogKitty(it.toString())
+                        myMap.put(it.dbn.toString(),it)
+                    }
+                    LogKitty("SAT done! " + myMap.size)
+                }
+            }
+            override fun onFailure(call: Call<SatScores>, t: Throwable) {
+            }
 
-    private fun createRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl(baseURL)
-            .addConverterFactory(GsonConverterFactory.create()).build()
+        })
+        return myMap
     }
 
-    internal interface SATService {
-        @GET
-        fun searchResults(): Call<SatScores?>?
-    }
-
-    fun GetScores(count: Int): Call<SatScores?>? {
-        return sATService.searchResults()
+    interface SATService {
+        @GET("f9bf-2cp4.json")
+        fun getAllSATScores(): Call<SatScores>
     }
 }

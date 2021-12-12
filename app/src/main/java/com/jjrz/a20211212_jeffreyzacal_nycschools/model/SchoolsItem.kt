@@ -1,6 +1,6 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
-data class schoolsItem (
+data class SchoolsItem (
     val academicopportunities1: String?,
     val academicopportunities2: String?,
     val academicopportunities3: String?,
@@ -344,4 +344,6 @@ data class schoolsItem (
     val transfer: String?,
     val website: String?,
     val zip: String?
-)
+) {
+    public SchoolsItem(null){}
+}

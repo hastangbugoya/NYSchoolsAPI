@@ -1,25 +1,19 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.view
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.Target
 import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolsListItemBinding
-import com.jjrz.a20211212_jeffreyzacal_nycschools.model.schoolsItem
-import kotlin.math.log
+import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsItem
 
 class SchoolsRecyclerViewAdapter {
-    private var schoolsList: List<schoolsItem>? = null
+    private var schoolsList: List<SchoolsItem>? = null
 
-    fun SchoolsRecyclerViewAdapter(schools: List<schoolsItem>?) {
+    fun SchoolsRecyclerViewAdapter(schools: List<SchoolsItem>?) {
         this.schoolsList = schools
     }
 
-    fun setSchools(schools: List<schoolsItem>?) {
+    fun setSchools(schools: List<SchoolsItem>?) {
         this.schoolsList = schools
     }
 
@@ -35,7 +29,7 @@ class SchoolsRecyclerViewAdapter {
     }
 
     fun onBindViewHolder(holder: SchoolsViewHolder, position: Int) {
-        val schoolItem: schoolsItem = schoolsList!![position]
+        val schoolItem: SchoolsItem = schoolsList!![position]
         holder.binding.textSchoolName.text = schoolItem.school_name.toString()
         holder.binding.textSchoolLocation.text = schoolItem.location.toString()
     }
