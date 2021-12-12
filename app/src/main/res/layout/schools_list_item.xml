@@ -25,7 +25,19 @@
             android:clickable="true"
             android:focusable="true"
             />
-
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_sat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star_24"
+            app:layout_constraintTop_toTopOf="@id/text_school_name"
+            app:layout_constraintRight_toLeftOf="@id/img_info"
+            app:layout_constraintBottom_toBottomOf="@id/text_school_name"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            />
         <TextView
             android:id="@+id/text_school_name"
             style="@style/SchoolName"

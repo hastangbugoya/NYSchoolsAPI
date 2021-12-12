@@ -1,18 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<TextView
-    android:id="@+id/text_school_name"
-    style="@style/SchoolName"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="School Name"
-    android:gravity="center_horizontal"
-    android:background="@color/teal_200"
-    />
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_school_name"
+        style="@style/SchoolName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@color/teal_200"
+        android:gravity="center_horizontal"
+        android:text="School Name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_sat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_baseline_info_24"
+        app:layout_constraintBottom_toBottomOf="@id/text_school_name"
+        app:layout_constraintRight_toRightOf="@id/text_school_name"
+        app:layout_constraintTop_toTopOf="@id/text_school_name" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/text_takers_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tests"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/text_school_name" />
+
+    <TextView
+        android:id="@+id/text_num_of_sat_test_takers"
+        style="@style/NumericInfoBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="9999"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/text_takers_label" />
+
+    <TextView
+        android:id="@+id/text_critical_reading_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Critical Reading"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_school_name" />
+
+    <TextView
+        android:id="@+id/text_sat_critical_reading_avg_score"
+        style="@style/NumericInfoBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="999"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_critical_reading_label" />
+
+
+    <TextView
+        android:id="@+id/text_math_avg_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Math"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/text_num_of_sat_test_takers" />
+
+    <TextView
+        android:id="@+id/text_sat_math_avg_score"
+        style="@style/NumericInfoBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="999"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/text_math_avg_label" />
+
+    <TextView
+        android:id="@+id/text_writing_avg_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Writing"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_math_avg_label" />
+
+    <TextView
+        android:id="@+id/text_sat_writing_avg_score"
+        style="@style/NumericInfoBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="999"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_writing_avg_label" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
