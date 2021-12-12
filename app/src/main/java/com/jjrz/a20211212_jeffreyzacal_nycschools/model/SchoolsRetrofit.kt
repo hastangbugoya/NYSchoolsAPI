@@ -1,6 +1,9 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStoreOwner
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
+import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsVieModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +31,7 @@ class SchoolsRetrofit {
                     response.body()?.forEach {
                         myList.add(it)
                     }
-                    LogKitty("Schools added to list : "+ myList.size)
+                    LogKitty("Schools added to list : " + myList.size)
                 }
             }
 
