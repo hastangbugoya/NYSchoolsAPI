@@ -11,16 +11,15 @@ class SchoolsRecyclerViewAdapter :
     RecyclerView.Adapter<SchoolsRecyclerViewAdapter.SchoolsViewHolder>() {
     private var schoolsList: List<SchoolsItem>? = null
 
-
     fun SchoolsRecyclerViewAdapter(schools: List<SchoolsItem>?) {
         LogKitty("SchoolsRecyclerViewAdapter Constructor")
-        this.schoolsList = schools
+        schoolsList = schools
         notifyDataSetChanged()
     }
 
     fun setSchools(schools: List<SchoolsItem>?) {
         LogKitty("setSchools > " + schools?.size)
-        this.schoolsList = schools
+        schoolsList = schools
         notifyDataSetChanged()
     }
 
@@ -45,7 +44,6 @@ class SchoolsRecyclerViewAdapter :
         holder.binding.textSchoolEmail.text = schoolItem.school_email.toString()
         holder.binding.textSchoolWebsite.text = schoolItem.website.toString()
         holder.binding.imgInfo.setOnClickListener {
-
         }
     }
 
