@@ -28,6 +28,7 @@ class SchoolsRetrofit {
                     response.body()?.forEach {
                         myList.add(it)
                     }
+                    LogKitty("Schools added to list : "+ myList.size)
                 }
             }
 

@@ -5,11 +5,26 @@
     android:layout_height="wrap_content"
     android:padding="4dp"
     android:layout_margin="4dp"
-    android:elevation="3dp">
+    android:elevation="3dp"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/card_school_list">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_info_24"
+            app:layout_constraintTop_toTopOf="@id/text_school_name"
+            app:layout_constraintRight_toRightOf="@id/text_school_name"
+            app:layout_constraintBottom_toBottomOf="@id/text_school_name"
+            android:padding="12dp"
+            android:elevation="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            />
 
         <TextView
             android:id="@+id/text_school_name"
@@ -33,6 +48,23 @@
             android:text="School Address"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_school_name" />
+        <TextView
+            android:id="@+id/text_school_email"
+            style="@style/SchoolDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/text_school_location"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="add@address.com" />
+        <TextView
+            android:id="@+id/text_school_website"
+            style="@style/SchoolDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/text_school_email"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="www.website.com" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
