@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.jjrz.a20211212_jeffreyzacal_nycschools.R
+import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolDetailsBinding
 
 
 class SchoolInfoDialogFragment() : DialogFragment() {
@@ -21,11 +22,20 @@ class SchoolInfoDialogFragment() : DialogFragment() {
     }
 
     override fun onStart() {
+        val binding = SchoolDetailsBinding.inflate(LayoutInflater.from(requireContext()))
         super.onStart()
         dialog?.window?.setLayout(
             resources.displayMetrics.widthPixels,
             (resources.displayMetrics.heightPixels * 0.80).toInt()
         )
-
+        binding.textSchoolName.text = "Test"
+        binding.textOverview.text = "Test2"
+        binding.textPhone.text = "Test3"
+        binding.textSchoolLocation.text = "Test4"
+        binding.textSchoolEmail.text = "Test5"
+        binding.textZip.text = "Test6"
+        binding.imgOkIcon.setOnClickListener() {
+            activity?.onBackPressed()
+        }
     }
 }

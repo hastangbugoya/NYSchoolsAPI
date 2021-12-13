@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.jjrz.a20211212_jeffreyzacal_nycschools.R
+import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolSatScoresBinding
 
 
 class SchoolSATDialogFragment() : DialogFragment() {
@@ -21,11 +22,19 @@ class SchoolSATDialogFragment() : DialogFragment() {
     }
 
     override fun onStart() {
+        val binding = SchoolSatScoresBinding.inflate(LayoutInflater.from(requireContext()))
         super.onStart()
         dialog?.window?.setLayout(
             resources.displayMetrics.widthPixels,
             (resources.displayMetrics.heightPixels * 0.80).toInt()
         )
-
+        binding.textSchoolName.text = "Test 1"
+        binding.textNumOfSatTestTakers.text = "9999"
+        binding.textSatCriticalReadingAvgScore.text = "25"
+        binding.textSatMathAvgScore.text = "50"
+        binding.textSatWritingAvgScore.text = "0"
+        binding.imgOkIcon.setOnClickListener() {
+            activity?.onBackPressed()
+        }
     }
 }
