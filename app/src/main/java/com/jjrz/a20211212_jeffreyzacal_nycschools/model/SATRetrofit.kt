@@ -1,13 +1,18 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
 
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.internal.ContextUtils.getActivity
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
+import com.jjrz.a20211212_jeffreyzacal_nycschools.view.MainActivity
+import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsVieModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import java.security.AccessController.getContext
 
 
 class SATRetrofit {

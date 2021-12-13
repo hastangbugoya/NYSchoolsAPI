@@ -19,6 +19,7 @@ class SchoolsRetrofit {
         val service = retrofit.create(SchoolsService::class.java)
         val call = service.getAllSchools()
         call.enqueue(object : Callback<Schools> {
+
             override fun onResponse(call: Call<Schools>, response: Response<Schools>) {
                 if (response.code() == 200) {
                     LogKitty("Hello Schools API results : " + response.body()?.size)

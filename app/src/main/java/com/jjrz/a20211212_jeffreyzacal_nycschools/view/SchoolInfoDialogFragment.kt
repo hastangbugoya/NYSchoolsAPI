@@ -12,7 +12,6 @@ import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolDetailsBindi
 
 
 class SchoolInfoDialogFragment() : DialogFragment() {
-
     fun onCreate(
         inflater: LayoutInflater,
         container: ViewGroup?,
