@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_info_popup">
 
     <TextView
         android:id="@+id/text_school_name"
@@ -29,7 +30,8 @@
         android:src="@drawable/ic_baseline_info_24"
         app:layout_constraintBottom_toBottomOf="@id/text_school_name"
         app:layout_constraintRight_toRightOf="@id/text_school_name"
-        app:layout_constraintTop_toTopOf="@id/text_school_name" />
+        app:layout_constraintTop_toTopOf="@id/text_school_name"
+        android:visibility="invisible"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/card_school_list">
+        android:background="@drawable/background_card_school_list">
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_info"
             android:layout_width="wrap_content"
