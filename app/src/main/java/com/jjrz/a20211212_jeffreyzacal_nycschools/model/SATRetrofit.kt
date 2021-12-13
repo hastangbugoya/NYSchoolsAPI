@@ -12,7 +12,7 @@ import retrofit2.http.GET
 
 class SATRetrofit {
     var myMap = HashMap<String, SatScoresItem>()
-    fun getScores() : HashMap<String, SatScoresItem> {
+    fun getScores(): HashMap<String, SatScoresItem> {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://data.cityofnewyork.us/resource/")
@@ -26,11 +26,12 @@ class SATRetrofit {
                     LogKitty("SATs API response : " + response.body()?.size)
                     response.body()?.forEach {
                         LogKitty(it.toString())
-                        myMap.put(it.dbn.toString(),it)
+                        myMap.put(it.dbn.toString(), it)
                     }
                     LogKitty("SAT HashMap size : " + myMap.size)
                 }
             }
+
             override fun onFailure(call: Call<SatScores>, t: Throwable) {
             }
 

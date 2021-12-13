@@ -39,12 +39,16 @@ class SchoolsRecyclerViewAdapter :
     override fun onBindViewHolder(holder: SchoolsViewHolder, position: Int) {
         val schoolItem: SchoolsItem = schoolsList!![position]
         LogKitty("onBindViewHolder > " + schoolItem.school_name.toString())
-        holder.binding.textSchoolName.text = schoolItem.school_name.toString()
-        holder.binding.textSchoolLocation.text = schoolItem.location.toString()
-        holder.binding.textSchoolEmail.text = schoolItem.school_email.toString()
-        holder.binding.textSchoolWebsite.text = schoolItem.website.toString()
-        holder.binding.imgInfo.setOnClickListener {
+        holder.binding.apply {
+            textSchoolName.text = schoolItem.school_name.toString()
+            textSchoolLocation.text =
+                "{$schoolItem.primary_address_line_1.toString()}, ${schoolItem.city.toString()} {${schoolItem.zip.toString()}"
+            textSchoolEmail.text = schoolItem.school_email.toString()
+            textSchoolWebsite.text = schoolItem.website.toString()
+            imgInfo.setOnClickListener {
+            }
         }
+
     }
 
     class SchoolsViewHolder(binding: SchoolsListItemBinding) :

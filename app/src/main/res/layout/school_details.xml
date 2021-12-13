@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:background="@color/teal_700"
         android:gravity="center_horizontal"
-        tools:text="School Name"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="School Name" />
 
     <TextView
         android:id="@+id/text_overview"
@@ -24,16 +24,16 @@
         android:layout_height="wrap_content"
         android:gravity="start"
         android:maxLines="4"
-        tools:text="@string/lorem_ipsum"
-        app:layout_constraintTop_toBottomOf="@id/text_school_name" />
+        app:layout_constraintTop_toBottomOf="@id/text_school_name"
+        tools:text="@string/lorem_ipsum" />
 
     <TextView
         android:id="@+id/text_school_location"
         style="@style/SchoolDetailInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Address"
-        app:layout_constraintTop_toBottomOf="@id/text_overview" />
+        app:layout_constraintTop_toBottomOf="@id/text_overview"
+        tools:text="Address" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_directions_icon"
@@ -50,16 +50,16 @@
         style="@style/SchoolDetailInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="99999"
-        app:layout_constraintTop_toBottomOf="@id/text_school_location" />
+        app:layout_constraintTop_toBottomOf="@id/text_school_location"
+        tools:text="99999" />
 
     <TextView
         android:id="@+id/text_school_email"
         style="@style/SchoolDetailInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="add@address.com"
-        app:layout_constraintTop_toBottomOf="@id/text_zip" />
+        app:layout_constraintTop_toBottomOf="@id/text_zip"
+        tools:text="add@address.com" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_email_icon"
@@ -76,8 +76,8 @@
         style="@style/SchoolDetailInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="(999)999-9999"
-        app:layout_constraintTop_toBottomOf="@id/text_school_email" />
+        app:layout_constraintTop_toBottomOf="@id/text_school_email"
+        tools:text="(999)999-9999" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_phone_icon"
@@ -95,9 +95,8 @@
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:src="@drawable/ic_baseline_check_circle_32"
-        app:layout_constraintTop_toBottomOf="@id/text_phone"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
- />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_phone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

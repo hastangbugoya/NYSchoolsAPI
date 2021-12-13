@@ -8,5 +8,5 @@ data class SatScoresItem(
     val sat_writing_avg_score: String?,
     val school_name: String?
 ) {
-    constructor():this("","","","","","")
+    constructor() : this("", "", "", "", "", "")
 }

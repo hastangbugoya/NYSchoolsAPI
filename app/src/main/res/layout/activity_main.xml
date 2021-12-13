@@ -10,11 +10,10 @@
         android:id="@+id/schools_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:layout_editor_absoluteX="237dp"
         tools:layout_editor_absoluteY="351dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/schools_list_item"
-        android:padding="8dp"
-        />
+        tools:listitem="@layout/schools_list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

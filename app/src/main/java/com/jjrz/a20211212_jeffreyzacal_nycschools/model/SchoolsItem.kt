@@ -1,8 +1,5 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
-import com.google.gson.InstanceCreator
-import java.lang.reflect.Type
-
 
 data class SchoolsItem(
     val dbn: String?,
@@ -84,7 +81,7 @@ data class SchoolsItem(
 //    val bus: String?,
 //    val campus_name: String?,
 //    val census_tract: String?,
-//    val city: String?,
+    val city: String?,
 //    val code1: String?,
 //    val code10: String?,
 //    val code2: String?,
@@ -202,9 +199,9 @@ data class SchoolsItem(
 //    val interest9: String?,
 //    val international: String?,
 //    val language_classes: String?,
-//    val latitude: String?,
+    val latitude: String?,
     val location: String?,
-//    val longitude: String?,
+    val longitude: String?,
 //    val method1: String?,
 //    val method10: String?,
 //    val method2: String?,
@@ -241,7 +238,7 @@ data class SchoolsItem(
 //    val prgdesc7: String?,
 //    val prgdesc8: String?,
 //    val prgdesc9: String?,
-//    val primary_address_line_1: String?,
+    val primary_address_line_1: String?,
 //    val program1: String?,
 //    val program10: String?,
 //    val program2: String?,
@@ -347,7 +344,9 @@ data class SchoolsItem(
     val total_students: String?,
 //    val transfer: String?,
     val website: String?,
-    val zip: String?
+    val zip: String?,
+    //TODO: distance from current location + LATITUDE + LONGITUDE
+    val distance: Double
 ) {
-    constructor():this("","","","","","","","","","")
+    constructor() : this("", "", "", "", "", "", "", "", "", "", "", "", "", "", 0.0)
 }

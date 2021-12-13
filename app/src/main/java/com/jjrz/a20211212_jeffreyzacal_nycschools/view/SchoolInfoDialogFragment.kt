@@ -1,8 +1,8 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +13,11 @@ import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolDetailsBindi
 
 class SchoolInfoDialogFragment() : DialogFragment() {
 
-     fun onCreate(
+    fun onCreate(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) : View? {
+    ): View? {
         return inflater.inflate(R.layout.school_details, container, false)
     }
 
@@ -28,14 +28,24 @@ class SchoolInfoDialogFragment() : DialogFragment() {
             resources.displayMetrics.widthPixels,
             (resources.displayMetrics.heightPixels * 0.80).toInt()
         )
-        binding.textSchoolName.text = "Test"
-        binding.textOverview.text = "Test2"
-        binding.textPhone.text = "Test3"
-        binding.textSchoolLocation.text = "Test4"
-        binding.textSchoolEmail.text = "Test5"
-        binding.textZip.text = "Test6"
-        binding.imgOkIcon.setOnClickListener() {
-            activity?.onBackPressed()
+        binding.apply {
+            textSchoolName.text = "Test"
+            textOverview.text = "Test2"
+            textPhone.text = "Test3"
+            textSchoolLocation.text = "Test4"
+            textSchoolEmail.text = "Test5"
+            textZip.text = "Test6"
+            imgOkIcon.setOnClickListener {
+                activity?.onBackPressed()
+            }
+            imgDirectionsIcon.setOnClickListener {
+                //TODO : change uri to address or lnglat
+                val gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988")
+                val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+                mapIntent.setPackage("com.google.android.apps.maps")
+                startActivity(mapIntent)
+            }
         }
+
     }
 }
