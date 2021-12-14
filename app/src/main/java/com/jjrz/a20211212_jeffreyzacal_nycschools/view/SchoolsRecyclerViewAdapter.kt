@@ -1,25 +1,26 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.view
 
+import android.content.ContentProvider
+import android.content.Context
+import android.content.ContextWrapper
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolsListItemBinding
 import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsItem
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
+import java.security.AccessController.getContext
 
 class SchoolsRecyclerViewAdapter :
     RecyclerView.Adapter<SchoolsRecyclerViewAdapter.SchoolsViewHolder>() {
-    private var schoolsList: List<SchoolsItem>? = null
+    private var schoolsList = mutableListOf<SchoolsItem>()
 
-    fun SchoolsRecyclerViewAdapter(schools: List<SchoolsItem>?) {
-        LogKitty("SchoolsRecyclerViewAdapter Constructor")
-        schoolsList = schools
-        notifyDataSetChanged()
-    }
-
-    fun setSchools(schools: List<SchoolsItem>?) {
-        LogKitty("setSchools > " + schools?.size)
-        schoolsList = schools
+    fun setSchools(schools: MutableList<SchoolsItem>?) {
+        if (schools != null) {
+            schoolsList = schools
+        }
         notifyDataSetChanged()
     }
 
@@ -37,8 +38,8 @@ class SchoolsRecyclerViewAdapter :
     }
 
     override fun onBindViewHolder(holder: SchoolsViewHolder, position: Int) {
+        LogKitty("onBindViewHolder")
         val schoolItem: SchoolsItem = schoolsList!![position]
-        LogKitty("onBindViewHolder > " + schoolItem.school_name.toString())
         holder.binding.apply {
             textSchoolName.text = schoolItem.school_name.toString()
             textSchoolLocation.text =
@@ -51,13 +52,22 @@ class SchoolsRecyclerViewAdapter :
 
     }
 
-    class SchoolsViewHolder(binding: SchoolsListItemBinding) :
+    inner class SchoolsViewHolder(binding: SchoolsListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         var binding: SchoolsListItemBinding = binding
     }
 
     override fun getItemCount(): Int {
         return schoolsList.let { schoolsList?.size } ?: 0
+    }
+
+    fun addStuff() {
+        LogKitty("addStuff")
+        schoolsList.add(SchoolsItem("1234","Long BEach","1234", "23rd Street","1","2","asdadfac qweqwe","2344","2312 21","12312@123123","This School","1234","www.www.www","12345"))
+        schoolsList.add(SchoolsItem("1234","Long BEach","1234", "23rd Street","1","2","asdadfac qweqwe","2344","2312 21","12312@123123","This School","1234","www.www.www","12345"))
+        schoolsList.add(SchoolsItem("1234","Long BEach","1234", "23rd Street","1","2","asdadfac qweqwe","2344","2312 21","12312@123123","This School","1234","www.www.www","12345"))
+        notifyDataSetChanged()
+        LogKitty("Adapter List > " + (schoolsList.size))
     }
 
 }

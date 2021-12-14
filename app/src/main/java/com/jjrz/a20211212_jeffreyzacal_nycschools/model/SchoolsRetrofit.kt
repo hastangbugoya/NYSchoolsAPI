@@ -1,5 +1,8 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import com.jjrz.a20211212_jeffreyzacal_nycschools.BuildConfig
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
 import retrofit2.Call
 import retrofit2.Callback
@@ -10,7 +13,7 @@ import retrofit2.http.GET
 
 
 class SchoolsRetrofit {
-    fun getSchools() : List<SchoolsItem> {
+    fun getSchools() : MutableList<SchoolsItem> {
         var myList = mutableListOf<SchoolsItem>()
         val retrofit = Retrofit.Builder()
             .baseUrl("https://data.cityofnewyork.us/resource/")
@@ -22,17 +25,24 @@ class SchoolsRetrofit {
 
             override fun onResponse(call: Call<Schools>, response: Response<Schools>) {
                 if (response.code() == 200) {
-                    LogKitty("Hello Schools API results : " + response.body()?.size)
+                    var i = 1
+                    LogKitty("AABBA Schools API results : " + response.body()?.size)
+//                    response.body().let {
+//                        if (it != null) {
+//                            myList = it.toMutableList()
+//                        }
+//                    } // Use this when it works
                     response.body()?.forEach {
                         myList.add(it)
-                        LogKitty("School : " + it.toString())
+                        LogKitty("(#$i School : $it")
+                        i++
                     }
-                    LogKitty("Schools added to list : " + myList.size)
+                    LogKitty("AABBB Schools added to list : " + myList.size)
                 }
             }
 
             override fun onFailure(call: Call<Schools>, t: Throwable) {
-                LogKitty("Fail : $t")
+                Log.d("Getting schools list : ","Fail : $t")
             }
         })
         return myList

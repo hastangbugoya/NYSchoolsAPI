@@ -3,41 +3,29 @@ package com.jjrz.a20211212_jeffreyzacal_nycschools.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.PagerSnapHelper
-import com.google.android.material.internal.ContextUtils.getActivity
 import com.jjrz.a20211212_jeffreyzacal_nycschools.R
 import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.ActivityMainBinding
-import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsItem
-import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsRetrofit
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
-import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsVieModel
+import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsViewModel
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var adapter : SchoolsAdapter
+    lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        val tempList = listOf<SchoolsItem>()
         super.onCreate(savedInstanceState)
-        LogKitty("Main1")
-        val myNYCSchoolsViewModel = ViewModelProvider(this).get(NycSchoolsVieModel::class.java)
-        val mySchoolsRetrofit = SchoolsRetrofit()
-
-        var binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
-        var adapter = SchoolsRecyclerViewAdapter()
-        val snapHelper = PagerSnapHelper()
-        LogKitty("Main2")
         setContentView(R.layout.activity_main)
-        LogKitty("Main3")
-//        adapter.setSchools(myNYCSchoolsViewModel.getSchools())
-        mySchoolsRetrofit.getSchools()
-        adapter.setSchools(mySchoolsRetrofit.getSchools())
-        LogKitty("Main4")
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        adapter = SchoolsAdapter()
+
         binding.schoolsRecyclerview.adapter = adapter
-        LogKitty("Main5 > " + myNYCSchoolsViewModel.getSchoolsCount())
-        myNYCSchoolsViewModel.mySchools.observe(this, Observer {
-            LogKitty("Main6 > " + myNYCSchoolsViewModel.getSchoolsCount())
-            adapter.setSchools(it)
-        })
+        val myNYCSchoolsViewModel = ViewModelProvider(this).get(NycSchoolsViewModel::class.java).also {
+            adapter.updateList(it.getSchools())
+            LogKitty("XXQW" + it.getSchoolsCount().toString())
+        }
+
+        adapter.addStuff()
+        LogKitty("ViewModel Schools count > " + myNYCSchoolsViewModel.getSchoolsCount())
     }
+
 }

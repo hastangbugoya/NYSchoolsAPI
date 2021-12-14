@@ -344,9 +344,9 @@ data class SchoolsItem(
     val total_students: String?,
 //    val transfer: String?,
     val website: String?,
-    val zip: String?,
-    //TODO: distance from current location + LATITUDE + LONGITUDE
-    val distance: Double
+    val zip: String?
 ) {
-    constructor() : this("", "", "", "", "", "", "", "", "", "", "", "", "", "", 0.0)
+    constructor() : this("", "", "", "", "", "",
+        "", "", "", "",
+        "", "", "", "")
 }
