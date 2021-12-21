@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
 import com.jjrz.a20211212_jeffreyzacal_nycschools.R
 import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolDetailsBinding
-import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsViewModel
+import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsItem
 
 
 class SchoolInfoDialogFragment() : DialogFragment() {
@@ -25,6 +24,9 @@ class SchoolInfoDialogFragment() : DialogFragment() {
     override fun onStart() {
         val binding = SchoolDetailsBinding.inflate(LayoutInflater.from(requireContext()))
         super.onStart()
+        val intent = this.arguments
+        val bundle = intent?.getSerializable("value")
+        val school = bundle as SchoolsItem
         dialog?.window?.setLayout(
             resources.displayMetrics.widthPixels,
             (resources.displayMetrics.heightPixels * 0.80).toInt()

@@ -3,6 +3,8 @@ package com.jjrz.a20211212_jeffreyzacal_nycschools.view
 import android.content.ContentProvider
 import android.content.Context
 import android.content.ContextWrapper
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -47,6 +49,12 @@ class SchoolsRecyclerViewAdapter :
             textSchoolEmail.text = schoolItem.school_email.toString()
             textSchoolWebsite.text = schoolItem.website.toString()
             imgInfo.setOnClickListener {
+                val intent = Intent(holder.binding.textSchoolWebsite.context, SchoolInfoDialogFragment::class.java).apply {
+                    val bundle = Bundle()
+                    bundle.putSerializable("value", schoolItem)
+                    this.putExtras(bundle)
+                }
+
             }
         }
 
