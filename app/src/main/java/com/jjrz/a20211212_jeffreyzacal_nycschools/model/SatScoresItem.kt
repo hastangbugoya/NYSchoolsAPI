@@ -1,5 +1,7 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
+import java.io.Serializable
+
 data class SatScoresItem(
     val dbn: String?,
     val num_of_sat_test_takers: String?,
@@ -7,6 +9,6 @@ data class SatScoresItem(
     val sat_math_avg_score: String?,
     val sat_writing_avg_score: String?,
     val school_name: String?
-) {
+) : Serializable {
     constructor() : this("", "", "", "", "", "")
 }

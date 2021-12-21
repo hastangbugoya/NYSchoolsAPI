@@ -8,13 +8,9 @@ import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsItem
 import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsRetrofit
 
 class NycSchoolsViewModel : ViewModel() {
-    private val mySchoolRetrofit = SchoolsRetrofit()
-    private val mySATRetrofit = SATRetrofit()
     var mySchools =
-        MutableLiveData<MutableList<SchoolsItem>>().apply { value = mySchoolRetrofit.getSchools().toMutableList() }
-    var satScores = MutableLiveData<HashMap<String, SatScoresItem>>().apply {
-        value = mySATRetrofit.getScores()
-    }
+        MutableLiveData<MutableList<SchoolsItem>>()
+    var satScores = MutableLiveData<HashMap<String, SatScoresItem>>()
 
     fun getScores(dBn: String): SatScoresItem? = satScores.value?.get(dBn)
 

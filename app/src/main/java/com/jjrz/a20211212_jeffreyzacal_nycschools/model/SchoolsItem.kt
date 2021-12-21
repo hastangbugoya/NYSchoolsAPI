@@ -1,5 +1,7 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
+import java.io.Serializable
+
 
 data class SchoolsItem(
     val dbn: String?,
@@ -345,7 +347,7 @@ data class SchoolsItem(
 //    val transfer: String?,
     val website: String?,
     val zip: String?
-) {
+) : Serializable {
     constructor() : this("", "", "", "", "", "",
         "", "", "", "",
         "", "", "", "")

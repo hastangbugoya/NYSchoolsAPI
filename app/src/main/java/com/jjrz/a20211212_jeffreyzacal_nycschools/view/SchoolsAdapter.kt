@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolsListItemBinding
 import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsItem
+import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SchoolsRetrofit
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper
 
 
 class SchoolsAdapter : RecyclerView.Adapter<SchoolsAdapter.SchoolViewHolder>() {
     private var schools: MutableList<SchoolsItem> = mutableListOf()
-
     fun updateList(new_list: MutableList<SchoolsItem>?) {
         if (new_list != null) {
             schools = new_list
@@ -32,12 +32,12 @@ class SchoolsAdapter : RecyclerView.Adapter<SchoolsAdapter.SchoolViewHolder>() {
     override fun onBindViewHolder(holder: SchoolViewHolder, position: Int) {
         val school = schools[position]
         with(holder.binding) {
-            school.also {
-                textSchoolName.text = it.school_name
+            school.apply {
+                textSchoolName.text = school_name
                 textSchoolLocation.text =
-                    "{$it.primary_address_line_1.toString()}, ${it.city.toString()} {${it.zip.toString()}"
-                textSchoolEmail.text = it.school_email
-                textSchoolWebsite.text = it.website
+                    "$primary_address_line_1, $city $zip"
+                textSchoolEmail.text = school_email
+                textSchoolWebsite.text = website
             }
         }
     }
@@ -60,7 +60,7 @@ class SchoolsAdapter : RecyclerView.Adapter<SchoolsAdapter.SchoolViewHolder>() {
                 "2344",
                 "2312 21",
                 "12312@123123",
-                "This School",
+                "ASDASF ARWQRQWRQWr",
                 "1234",
                 "www.www.www",
                 "12345"
@@ -78,7 +78,7 @@ class SchoolsAdapter : RecyclerView.Adapter<SchoolsAdapter.SchoolViewHolder>() {
                 "2344",
                 "2312 21",
                 "12312@123123",
-                "This School",
+                "qweqdcsfd ASDASRRWC asd",
                 "1234",
                 "www.www.www",
                 "12345"
@@ -96,7 +96,7 @@ class SchoolsAdapter : RecyclerView.Adapter<SchoolsAdapter.SchoolViewHolder>() {
                 "2344",
                 "2312 21",
                 "12312@123123",
-                "This School",
+                "ASD JHKLHJKJTY BBWER",
                 "1234",
                 "www.www.www",
                 "12345"

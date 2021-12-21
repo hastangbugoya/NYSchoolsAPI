@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.jjrz.a20211212_jeffreyzacal_nycschools.R
 import com.jjrz.a20211212_jeffreyzacal_nycschools.databinding.SchoolDetailsBinding
+import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsViewModel
 
 
 class SchoolInfoDialogFragment() : DialogFragment() {
