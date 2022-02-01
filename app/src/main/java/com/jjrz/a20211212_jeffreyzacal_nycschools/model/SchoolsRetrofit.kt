@@ -1,7 +1,12 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.model
 
+import android.app.Application
+import android.app.PendingIntent.getActivity
 import android.util.Log
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.ViewModelProvider
 import com.jjrz.a20211212_jeffreyzacal_nycschools.utility.DebugHelper.Companion.LogKitty
+import com.jjrz.a20211212_jeffreyzacal_nycschools.view.MainActivity
 import com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel.NycSchoolsViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -9,6 +14,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import java.security.AccessController.getContext
 
 
 class SchoolsRetrofit {
@@ -45,9 +51,8 @@ class SchoolsRetrofit {
                     mySATRetrofit.getScores()
                 }
             }
-
             override fun onFailure(call: Call<Schools>, t: Throwable) {
-                Log.d("Getting schools list : ", "Fail : $t")
+                Log.d("Getting schools list : ","Fail : $t")
             }
         })
     }

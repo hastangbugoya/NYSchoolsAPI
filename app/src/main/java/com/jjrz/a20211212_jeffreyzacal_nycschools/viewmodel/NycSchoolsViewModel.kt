@@ -1,6 +1,7 @@
 package com.jjrz.a20211212_jeffreyzacal_nycschools.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SATRetrofit
 import com.jjrz.a20211212_jeffreyzacal_nycschools.model.SatScoresItem

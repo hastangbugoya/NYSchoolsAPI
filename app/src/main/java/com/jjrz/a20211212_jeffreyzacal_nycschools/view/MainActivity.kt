@@ -3,6 +3,7 @@ package com.jjrz.a20211212_jeffreyzacal_nycschools.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jjrz.a20211212_jeffreyzacal_nycschools.R
@@ -16,7 +17,8 @@ class MainActivity : AppCompatActivity() {
     private val mySchoolRetrofit = SchoolsRetrofit()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val myNYCSchoolsViewModel = ViewModelProvider(this).get(NycSchoolsViewModel::class.java)
+        val myNYCSchoolsViewModel : NycSchoolsViewModel by viewModels()
+        val viewModel = ViewModelProvider(this).get(NycSchoolsViewModel::class.java)
         super.onCreate(savedInstanceState)
         var binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         val view = binding.root
@@ -41,5 +43,4 @@ class MainActivity : AppCompatActivity() {
         LogKitty(myNYCSchoolsViewModel.getSchoolsCount().toString())
         LogKitty("ViewModel Schools count > " + myNYCSchoolsViewModel.getSchoolsCount())
     }
-
 }
